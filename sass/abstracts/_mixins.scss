@@ -1,0 +1,19 @@
+@mixin foodColoring($color) {
+    background-color: $color;
+    box-shadow:
+        0 2px 0px lighten($color, 5%),
+        0 4px 0px darken($color, 8.2%),
+        0 6px 0px darken($color, 8.4%),
+        0 8px 0px darken($color, 8.6%),
+        0 10px 0px darken($color, 8.8%),
+        0 12px 0px darken($color, 9%),
+        0 14px 0px darken($color, 9.2%),
+        0 16px 0px darken($color, 9.4%),
+        0 18px 0px darken($color, 9.6%),
+        0 20px 0px darken($color, 9.8%),
+        0 22px 0px darken($color, 10%),
+        0 24px 0px darken($color, 10.2%),
+        0 26px 0px darken($color, 10.4%),
+        0 28px 0px darken($color, 10.6%),
+        0 30px 0px darken($color, 10.8%);
+}

@@ -1,0 +1,183 @@
+
+.cake {
+    position: absolute;
+    width: 250px*$size;
+    height: 200px*$size;
+    top: 57%;
+    left: 50%;
+    margin-top: -70px*$size;
+    margin-left: -125px*$size;
+    // visibility: hidden;
+    // opacity:0;
+    // transition:visibility .2s ease, opacity 1s ease;
+}
+.birthdayCard:hover .cake {
+  // visibility:visible;
+  //
+  // opacity:1;
+
+}
+
+.plate {
+    width: 270px*$size;
+    height: 110px*$size;
+    position: absolute;
+    bottom: -20px;
+    left: -4px;
+    background-color: #ccc;
+    border-radius: 50%;
+    box-shadow:
+        0 2px 0 darken(#ccc, 10%),
+        0 4px 0 darken(#ccc, 10%),
+        0 5px 40px rgba(black, 0.5);
+}
+
+.cake > * {
+    position: absolute;
+}
+
+.layer {
+    position: absolute;
+    display: block;
+    width: 250px*$size;
+    height: 100px*$size;
+    border-radius: 50%;
+    @include foodColoring($chocolate);
+}
+
+.layer-top { top: 0px; }
+.layer-middle { top: 33px*$size; }
+.layer-bottom { top: 66px*$size; }
+
+.icing {
+    top: 2px*$size;
+    left: 5px*$size;
+    background-color: $vanilla;
+    width: 240px*$size;
+    height: 90px*$size;
+    border-radius: 50%;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        right: 5px;
+        bottom: 6px;
+        left: 5px;
+        background-color: lighten($vanilla, 3%);
+        box-shadow:
+            0 0 4px lighten($vanilla, 5%),
+            0 0 4px lighten($vanilla, 5%),
+            0 0 4px lighten($vanilla, 5%);
+        border-radius: 50%;
+        z-index: 1;
+    }
+}
+
+.drip {
+    display: block;
+    width: 50px*$size;
+    height: 60px*$size;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: $vanilla;
+}
+
+.drip1 {
+    top: 53px*$size;
+    left: 5px*$size;
+    transform: skewY(15deg);
+    height: 48px*$size;
+    width: 40px*$size;
+}
+
+.drip2 {
+    top: 69px*$size;
+    left: 181px*$size;
+    transform: skewY(-15deg);
+}
+
+.drip3 {
+    top: 54px*$size;
+    left: 90px*$size;
+    width: 80px*$size;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.candle {
+    background-color: #7B020B;
+    width: 16px*$size;
+    height: 50px*$size;
+    border-radius: 8px / 4px;
+    top: -20px*$size;
+    left: 50%;
+    margin-left: -8px*$size;
+    z-index: 10;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px*$size;
+        height: 8px*$size;
+        border-radius: 50%;
+        background-color: lighten(#7B020B, 10%);
+    }
+}
+
+.flame {
+    position: absolute;
+    background-color: orange;
+    width: 15px*$size;
+    height: 35px*$size;
+    border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+    top: -34px*$size;
+    left: 50%;
+    margin-left: -7.5px*$size;
+    z-index: 10;
+    box-shadow:
+        0 0 10px rgba(orange, 0.5),
+        0 0 20px rgba(orange, 0.5),
+        0 0 60px rgba(orange, 0.5),
+        0 0 80px rgba(orange, 0.5);
+    transform-origin: 50% 90%;
+    animation: flicker 1s ease-in-out alternate infinite;
+}
+
+@keyframes flicker {
+    0% {
+        transform: skewX(5deg);
+        box-shadow:
+            0 0 10px rgba(orange, 0.2),
+            0 0 20px rgba(orange, 0.2),
+            0 0 60px rgba(orange, 0.2),
+            0 0 80px rgba(orange, 0.2) }
+    25% {
+        transform: skewX(-5deg);
+        box-shadow:
+            0 0 10px rgba(orange, 0.5),
+            0 0 20px rgba(orange, 0.5),
+            0 0 60px rgba(orange, 0.5),
+            0 0 80px rgba(orange, 0.5) }
+    50% {
+        transform: skewX(10deg);
+        box-shadow:
+            0 0 10px rgba(orange, 0.3),
+            0 0 20px rgba(orange, 0.3),
+            0 0 60px rgba(orange, 0.3),
+            0 0 80px rgba(orange, 0.3) }
+    75% {
+        transform: skewX(-10deg);
+        box-shadow:
+            0 0 10px rgba(orange, 0.4),
+            0 0 20px rgba(orange, 0.4),
+            0 0 60px rgba(orange, 0.4),
+            0 0 80px rgba(orange, 0.4) }
+    100% {
+        transform: skewX(5deg);
+        box-shadow:
+            0 0 10px rgba(orange, 0.5),
+            0 0 20px rgba(orange, 0.5),
+            0 0 60px rgba(orange, 0.5),
+            0 0 80px rgba(orange, 0.5) }
+}

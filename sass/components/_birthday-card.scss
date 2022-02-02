@@ -1,0 +1,64 @@
+.birthdayCard {
+  position: relative;
+  width: 250px*$birthdayCard-size;
+  height:350px*$birthdayCard-size;
+  cursor: pointer;
+  transform-style: preserve-3d;
+	transform: perspective(2500px);
+  transition: 1s;
+}
+.birthdayCard:hover {
+	transform: perspective(2500px) rotate(5deg);
+	box-shadow: inset 100px 20px 100px rgba(0,0,0,.2), 0 10px 100px rgba(0,0,0,0.5);
+}
+
+.birthdayCard:hover .cardFront {
+  transform: rotateY(-161deg);
+}
+
+.birthdayCard:hover .cardBack {
+  transform: rotateY(-160deg);
+}
+
+.cardFront, .cardBack{
+  width: 250px*$birthdayCard-size;
+  height:350px*$birthdayCard-size;
+  overflow: hidden;
+  transform-origin: left;
+  // box-shadow: inset 100px 20px 100px rgba(0,0,0,.2), 30px 0 50px rgba(0,0,0,0.4);
+  transition: .6s;
+  border:$birthdayCard-border;
+}
+
+.cardBack, .cardInside{
+  background-color: $inside-color;
+}
+
+.cardFront{
+  position: relative;
+  background-color: $front-color;
+  background-image:url("../src/images/birthday-cover.png");
+}
+
+.cardBack{
+  position: absolute;
+  top:0;
+  left:0;
+  backface-visibility: visible;
+  z-index: -1;
+  background-image:url("../src/images/cat-cover-v3-flip.png");
+}
+
+.cardInside {
+  position: absolute;
+  width: 250px*$birthdayCard-size;
+  height:350px*$birthdayCard-size;
+  border:$birthdayCard-border;
+  z-index:-1;
+  left:0;
+  top:0;
+
+  &__text-box{
+    margin:40px;
+  }
+}
